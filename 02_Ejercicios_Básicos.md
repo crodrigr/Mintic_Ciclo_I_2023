@@ -64,3 +64,43 @@
 
 ![image](https://user-images.githubusercontent.com/31961588/171307000-a088f237-f470-4fd5-adb6-d077a17695c5.png)
 
+# 11. Servicio de agua - usuarios
+
+```Python
+print("PROGRMA DE SERVICIO DE AGUA")
+
+VCM3=200
+
+usuario=int(input("Numero usuarios: "))
+
+for i in range(usuario) :   
+    codigo=input("Código: ")
+    nombre=input("Nombre: ")
+    estado=input("Estado (V=vigente o S=suspendido)")
+    estrato=int(input("Estrato (1,2,3,4,5,6): "))
+    consumo=int(input("Comsumo: "))
+    tarifaComsumo=0
+
+    if (estado=='V') :
+        if(estrato==1) :
+            tarifaComsumo=10000
+        if(estrato==2) :
+            tarifaComsumo=20000
+        if(estrato==3) :
+            tarifaComsumo=30000
+        if(estrato==4) :
+            tarifaComsumo=45000
+        if(estrato==5) :
+            tarifaComsumo=60000
+        if(estrato==6) :
+            tarifaComsumo=70000
+
+    valorComsumo=consumo*VCM3
+    totalApagar=tarifaComsumo+valorComsumo
+
+    print("Nombre usuario: ",nombre)
+    print("Valor tarifa básica: ",tarifaComsumo)
+    print("Valor de comsumo: ",valorComsumo)
+    print("Valor a pagar: ",totalApagar)
+```
+
