@@ -98,40 +98,47 @@ print("Califiación culitativa: ",cualitativa)
 # 12. Servicio de agua - usuarios
 
 ```Python
-print("PROGRMA DE SERVICIO DE AGUA")
+print("PROGRAMA QUE CALCULA EL VALOR DEL SERVICIO DE AGUA PAR N USUARIOS")
 
-VCM3=200
+usario=int(input("Numero de usarios: "))
 
-usuario=int(input("Numero usuarios: "))
+TARIFACONSUMO=200
 
-for i in range(usuario) :   
-    codigo=input("Código: ")
-    nombre=input("Nombre: ")
-    estado=input("Estado (V=vigente o S=suspendido)")
-    estrato=int(input("Estrato (1,2,3,4,5,6): "))
-    consumo=int(input("Comsumo: "))
-    tarifaComsumo=0
+totalRecaudado=0
 
-    if (estado=='V') :
-        if(estrato==1) :
-            tarifaComsumo=10000
-        if(estrato==2) :
-            tarifaComsumo=20000
-        if(estrato==3) :
-            tarifaComsumo=30000
-        if(estrato==4) :
-            tarifaComsumo=45000
-        if(estrato==5) :
-            tarifaComsumo=60000
-        if(estrato==6) :
-            tarifaComsumo=70000
+for i in range(usario) :
 
-    valorComsumo=consumo*VCM3
-    totalApagar=tarifaComsumo+valorComsumo
+    codigo=input("Ingrese el código: ")
+    nombre=input("Ingrese el nombre: ")
+    estado=input("Ingrese el estado: V o S: ")
+    estrato=int(input("Ingrese el estrato: "))
+    cosumo=int(input("Comsumo del mes: "))
+    tarifaBasica=0
 
-    print("Nombre usuario: ",nombre)
-    print("Valor tarifa básica: ",tarifaComsumo)
-    print("Valor de comsumo: ",valorComsumo)
-    print("Valor a pagar: ",totalApagar)
+    if(estado=="V") :
+        if(estrato==1):
+           tarifaBasica=10000
+        elif(estrato==2):
+           tarifaBasica=20000
+        elif(estrato==3):
+           tarifaBasica=30000
+        elif(estrato==4) :
+           tarifaBasica=45000
+        elif(estrato==5) :
+           tarifaBasica=60000
+        else:
+            tarifaBasica=70000
+    valorConsumo=cosumo*TARIFACONSUMO
+    total=tarifaBasica+valorConsumo
+
+    totalRecaudado=totalRecaudado+total
+
+    print("Nombre: ",nombre)
+    print("Tarifa básica: ",'{:,.2f}'.format(tarifaBasica))
+    print("Valor comsumo: ",'{:,.2f}'.format(valorConsumo))    
+    print("Total: ",'{:,.2f}'.format(total))
+
+print("Total recaudado: ",'{:,.2f}'.format(totalRecaudado))
+
 ```
 
