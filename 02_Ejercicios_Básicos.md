@@ -64,7 +64,38 @@
 
 ![image](https://user-images.githubusercontent.com/31961588/171307000-a088f237-f470-4fd5-adb6-d077a17695c5.png)
 
-# 11. Servicio de agua - usuarios
+# 11 Califiación cualitativa
+
+```Python
+
+print("PROGRAMA DE CALIFCACIÓN CUALITATVIA")
+
+nombre=input("Nombre: ")
+calificacion=int(input("Calificación: "))
+
+
+#0-59 D,60-79 C,80-89 B, 90-100 A
+if(calificacion>=0 and calificacion<=100) :  
+       if(calificacion<=59) :
+        cualitativa="D"
+       elif (calificacion>=60 and calificacion<=79) :
+            cualitativa="C"
+       elif (calificacion>=80 and calificacion<=89) :
+            cualitativa="B"
+       else :
+            cualitativa="A"
+else :
+  cualitativa="No definida"
+
+
+
+print("Nombre: ")
+print("Califación cuantitativa: ",calificacion)
+print("Califiación culitativa: ",cualitativa)
+
+```
+
+# 12. Servicio de agua - usuarios
 
 ```Python
 print("PROGRMA DE SERVICIO DE AGUA")
