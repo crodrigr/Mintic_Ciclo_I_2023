@@ -188,10 +188,12 @@ print("Total categoria C: ",totalCtC)
 
 ![image](https://user-images.githubusercontent.com/31961588/172032683-1274fc42-8f00-4ae6-912d-ce4c33fa6d49.png)
 
-![image](https://user-images.githubusercontent.com/31961588/172032809-a65fb331-b378-459f-91e1-97c2551a7ff6.png)
 
 
 # 15 Secuencia de Collatz
 
 ![image](https://user-images.githubusercontent.com/31961588/172032804-3de1ddff-4d2e-439d-95b1-9d5a8912e49b.png)
+
+![image](https://user-images.githubusercontent.com/31961588/172032809-a65fb331-b378-459f-91e1-97c2551a7ff6.png)
+
 
