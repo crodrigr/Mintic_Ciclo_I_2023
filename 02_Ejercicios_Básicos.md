@@ -141,4 +141,46 @@ for i in range(usario) :
 print("Total recaudado: ",'{:,.2f}'.format(totalRecaudado))
 
 ```
+# 13 Calculo de salario de docentes
 
+```Python
+print("PROGRAMA DE CALCULO DE SALARIO DE DOCENTES")
+
+print("Número de docentes")
+numeroDocentes=int(input())
+totalSalarioDocentes=0
+totalCtA=0
+totalCtB=0
+totalCtC=0
+
+
+for i in range(numeroDocentes) :
+
+      numeroIdentidad=input("Ingrese el número de documento: ")
+      nombre=input("Ingrese el nombre: ")
+      categoria=input("Ingrese al categoria(A,B,C): ")
+      horas=int(input("Ingrese las horas trabajas: "))
+      valorCategoria=0
+
+      if(categoria=='A') :
+           valorCategoria=25000
+           totalCtA=totalCtA+1
+      elif(categoria=='B'):
+           valorCategoria=35000
+           totalCtB=totalCtB+1
+      else :
+           valorCategoria=50000
+           totalCtC=totalCtC+1
+
+
+      valorTotalSalarioDocente=valorCategoria*horas
+      totalSalarioDocentes=totalSalarioDocentes+valorTotalSalarioDocente
+
+      print("Nombre: ",nombre)
+      print("Valor a pagar: ",'{:,.2f}'.format(valorTotalSalarioDocente))
+
+print("Valor total a pagar para todos los docentes: ",'{:,.2f}'.format(totalSalarioDocentes))
+print("Total categoria A: ",totalCtA)
+print("Total categoria B: ",totalCtB)
+print("Total categoria C: ",totalCtC)
+```
