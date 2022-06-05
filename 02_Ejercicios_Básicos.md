@@ -184,3 +184,6 @@ print("Total categoria A: ",totalCtA)
 print("Total categoria B: ",totalCtB)
 print("Total categoria C: ",totalCtC)
 ```
+# 14 Tiempo de Viaje
+
+![image](https://user-images.githubusercontent.com/31961588/172032683-1274fc42-8f00-4ae6-912d-ce4c33fa6d49.png)
