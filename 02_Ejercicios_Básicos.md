@@ -196,4 +196,16 @@ print("Total categoria C: ",totalCtC)
 
 ![image](https://user-images.githubusercontent.com/31961588/172032809-a65fb331-b378-459f-91e1-97c2551a7ff6.png)
 
+```Python
+print("PROGRAMA DE SERIE DE COLLATZ")
 
+
+numero=int(input("Ingrese el número: \n"))
+print(numero)
+while(numero!=1) :
+    if(numero%2==0) :
+        numero=numero/2
+    else :
+        numero=numero*3+1
+    print('{:,.0f}'.format(numero))
+```
