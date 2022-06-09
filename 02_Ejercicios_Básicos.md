@@ -209,3 +209,21 @@ while(numero!=1) :
         numero=numero*3+1
     print('{:,.0f}'.format(numero))
 ```
+
+# 16 Tablas de multplicar - (ciclos anidados)
+
+```Python
+
+print("PROGRAMA TABLA GENER LAS TABLAS DE MULTIPLIACIÓN DEL UNO AL DIEZ")
+
+
+#numero=int(input("Ingrese el número de la de multpliación: ")
+
+
+   
+for i in range(1,11) :
+    print("TABLA DE MULTIPLICAR DEL ",i,"\n")
+    for j in range(1,11) :
+       print(i,"*",j,"=",i*j)
+    print("\n") 
+```
