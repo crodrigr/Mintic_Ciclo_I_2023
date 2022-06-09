@@ -188,7 +188,20 @@ print("Total categoria C: ",totalCtC)
 
 ![image](https://user-images.githubusercontent.com/31961588/172032683-1274fc42-8f00-4ae6-912d-ce4c33fa6d49.png)
 
+```Python
+print("PROGRAMA DE TIMPO DE VIAJE")
 
+tramo=int(input("Ingrese el tramo: "))
+
+totalMinTramos=0
+
+while (tramo!=0) :
+   totalMinTramos=totalMinTramos+tramo
+   tramo=int(input("Ingrese el tramo: "))
+
+print("El tiempo total del viaje en minutos ", totalMinTramos)
+print("El tiempo total del viaje en horas ", totalMinTramos//60, ":",totalMinTramos%60)
+```
 
 # 15 Secuencia de Collatz
 
