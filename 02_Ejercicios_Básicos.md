@@ -232,11 +232,45 @@ print("PROGRAMA TABLA GENER LAS TABLAS DE MULTIPLIACIÓN DEL UNO AL DIEZ")
 
 #numero=int(input("Ingrese el número de la de multpliación: ")
 
-
    
 for i in range(1,11) :
     print("TABLA DE MULTIPLICAR DEL ",i,"\n")
     for j in range(1,11) :
        print(i,"*",j,"=",i*j)
     print("\n") 
+```
+
+# 17 Tarifa basica de electricidad con validaciones
+
+![image](https://user-images.githubusercontent.com/31961588/172966462-45a6971a-a826-4bc6-8d58-7571ce780f0a.png)
+
+```Python
+print("PROGRAMA QUE CALCULA LA TARIFA ELECTRICA CON VALIDACIÓN DE DATOS: ")
+
+tarifaBasica=0
+
+while True :
+    try :
+        estrato=int(input("Ingresar estrato (1,2,3,4,5): "))
+        if(estrato<1 or estrato>5) :
+            print("El estrato debe ser 1,2,3,4,5 ")
+            continue
+        #calculo la tarifa basica
+        
+        if(estrato==1) :
+           tarifaBasica=10000  
+        elif (estrato==2) :
+           tarifaBasica=15000
+        elif (estrato==3) :
+           tarifaBasica=30000 
+        elif (estrato==4) :
+           tarifaBasica=50000 
+        else :
+           tarifaBasica=65000
+        print("Tarifa basica es: ",'{:,.2f}'.format(tarifaBasica))
+          
+        break
+    except ValueError:
+        print("El dato ingresado debe ser númerico ")
+print("Fin del proceso...")
 ```
