@@ -274,11 +274,11 @@ while True :
         print("El dato ingresado debe ser númerico ")
 print("Fin del proceso...")
 ```
-# 18 Sevicio de teléfono con funciones. 
+# 18 Servicio de teléfono con funciones. 
 
 ![image](https://user-images.githubusercontent.com/31961588/173166705-e4fe0f77-955d-4e82-816e-427096763865.png)
 
-**Libreria funciones**
+**funciones.py**
 ```Python
 def getDatoNumericoValidado(leyenda) :
     while (True) :
