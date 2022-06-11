@@ -274,3 +274,66 @@ while True :
         print("El dato ingresado debe ser númerico ")
 print("Fin del proceso...")
 ```
+# 18 Sevicio de teléfono con funciones. 
+
+![image](https://user-images.githubusercontent.com/31961588/173166705-e4fe0f77-955d-4e82-816e-427096763865.png)
+
+**Libreria funciones**
+```Python
+def getDatoNumericoValidado(leyenda) :
+    while (True) :
+      try:
+        numero=int(input(leyenda))
+        break         
+      except ValueError :
+        print("Ops' el dato que ingreso no es númerico. ")
+    return numero
+
+def getDatoNumericoEntreRango(leyenda,limiteInferior,limiteSuperior) :
+    while True :
+      try :
+        estrato=int(input(leyenda))
+        if(estrato<limiteInferior or estrato>limiteSuperior) :
+            print("El valor debe estar entre, ",limiteInferior, "  y ",limiteSuperior)
+            continue  
+        break
+      except ValueError:
+        print("El dato ingresado debe ser númerico ")
+
+```
+**ServicioTelefono.py**
+
+```Python
+import funciones
+
+VALOR_IMPULSO=100
+#Funciones 
+def getTarifa(estrato) :
+    if(estrato==1):
+        tarifaBasica=10000
+    elif (estrato==2):
+        tarifaBasica=15000
+    elif (estrato==3):
+        tarifaBasica=20000
+    elif (estrato==4) :
+        tarifaBasica=25000
+    else :
+        tarifaBasica=30000
+    return tarifaBasica
+#FinFunciones
+
+n=funciones.getDatoNumericoValidado("Ingrese el número de abonados")
+totalPagoAbonados=0
+
+for i in range(n) :
+    nombre=input("Ingrese el nombre: ")
+    estrato=funciones.getDatoNumericoEntreRango("Ingrese por favor el estrato (1,2,3,4,5): ",1,5)
+    impulsos=funciones.getDatoNumericoValidado("Ingrese los impulsos: ")
+    tarifaBasica=getTarifa(estrato)
+    valorPagarAbononado=(impulsos*VALOR_IMPULSO)+tarifaBasica
+    totalPagoAbonados=totalPagoAbonados+valorPagarAbononado
+    print("Nombre: ",nombre," valor a pagar: ",valorPagarAbononado)
+
+print("Total a pagar de todos los abonados: ",totalPagoAbonados)
+
+```
