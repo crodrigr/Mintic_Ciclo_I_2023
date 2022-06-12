@@ -337,3 +337,30 @@ for i in range(n) :
 print("Total a pagar de todos los abonados: ",totalPagoAbonados)
 
 ```
+
+# 19 Lista de nombres con su tamaño
+
+![image](https://user-images.githubusercontent.com/31961588/173210026-9f46b524-168f-4a8c-a0e4-4da1f3b64c1f.png)
+
+```Python
+
+print("PROGRMA DE LISTA DE NOMBRES Y SU TAMAÑO")
+
+nombre=input("Ingresar nombre: ")
+
+listaNombres=[]
+listaNumeroCaracteres=[]
+listaNombres.append(nombre)
+listaNumeroCaracteres.append(len(nombre))
+
+while (nombre!="FIN"):
+     nombre=input("Ingresar nombre: ")
+     listaNombres.append(nombre)
+     listaNumeroCaracteres.append(len(nombre))
+
+
+for i in range(len(listaNombres)) :
+    print("Nombre: ",listaNombres[i], "tamaño: ",listaNumeroCaracteres[i])
+
+
+```
