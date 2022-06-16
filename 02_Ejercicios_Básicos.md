@@ -373,53 +373,42 @@ for i in range(len(listaNombres)) :
 ```Python
 from funciones57 import * 
 
-
-#Varia[bles globales
+#Variables Globales
 datos=[]
-#promedio=0.0
-#totalMayorPromedio=0.0
 
-#funciones
-def llenado(numeroDatos) :
-    for i in range(numeroDatos) :
-         datos.append(getDatoDecimalValidado("Ingresar Dato: "))
+#Funciones
 
-def calcularPromedio(numeroDatos) :
-      sumaTotal=0.0
-      promedio=0.0
-      for i in range(numeroDatos) :
-         sumaTotal=sumaTotal+datos[i]
-      promedio=sumaTotal/numeroDatos
-      return promedio
+def llenado(tamaño):
+    for i in range(tamaño) :
+        datos.append(getDatoDecimalValidado("Ingrese dato: "))
 
-def  mayoresPromedio(numeroDatos,promedio) :
-       totalMayorPromedio=0
-       for i in range(numeroDatos) :
-           if(datos[i]>promedio):
-             totalMayorPromedio=totalMayorPromedio+1
-       return totalMayorPromedio
+def imprimir():
+    for i in range(len(datos)):
+        print("Dato: ",datos[i])
 
+def getPromedio():
+    suma=0
+    for i in range(len(datos)):
+        suma=suma+datos[i]
+    promedio=suma/len(datos)
+    return promedio
 
-def imprimirDato(numeroDatos) :
-     for i in range(numeroDatos) :
-        print("dato: ",datos[i])
+def getMayorPro(prom):
+    totalMayores=0
+    for i in range(len(datos)):
+        if(datos[i]>prom) :
+            totalMayores=totalMayores+1        
+    return totalMayores
 
+#Incio Programa
 
-#inicio programa
-
-n=getDatoEnteroValidado("Ingres el número de datos a solicitar: ")
+n=getDatoEnteroValidado("Ingrese la cantidad de veces que se van a solicitar datos: ")
 llenado(n)
-imprimirDato(n)
-promedio=calcularPromedio(n)
-print("El promedio es: ", promedio)
-totalMayorPromedio=mayoresPromedio(n,promedio)
-print("Mayores del promedio: ",totalMayorPromedio)
-imprimirDato(n)
-
-
-    
-
-
+pro=getPromedio()
+total=getMayorPro(pro)
+print("Promedio: ",pro)
+print("Total de valors mayores del promedio es: ",total)
+imprimir()
 
 ```
 **funciones57.py**
