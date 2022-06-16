@@ -364,3 +364,94 @@ for i in range(len(listaNombres)) :
 
 
 ```
+
+# 20 Mayores que promedio usando listas
+
+![image](https://user-images.githubusercontent.com/31961588/173965756-bd06178b-6f5e-4fad-be9d-48a6ff9d6887.png)
+
+**Mayores**
+```Python
+from funciones57 import * 
+
+
+#Varia[bles globales
+datos=[]
+#promedio=0.0
+#totalMayorPromedio=0.0
+
+#funciones
+def llenado(numeroDatos) :
+    for i in range(numeroDatos) :
+         datos.append(getDatoDecimalValidado("Ingresar Dato: "))
+
+def calcularPromedio(numeroDatos) :
+      sumaTotal=0.0
+      promedio=0.0
+      for i in range(numeroDatos) :
+         sumaTotal=sumaTotal+datos[i]
+      promedio=sumaTotal/numeroDatos
+      return promedio
+
+def  mayoresPromedio(numeroDatos,promedio) :
+       totalMayorPromedio=0
+       for i in range(numeroDatos) :
+           if(datos[i]>promedio):
+             totalMayorPromedio=totalMayorPromedio+1
+       return totalMayorPromedio
+
+
+def imprimirDato(numeroDatos) :
+     for i in range(numeroDatos) :
+        print("dato: ",datos[i])
+
+
+#inicio programa
+
+n=getDatoEnteroValidado("Ingres el número de datos a solicitar: ")
+llenado(n)
+imprimirDato(n)
+promedio=calcularPromedio(n)
+print("El promedio es: ", promedio)
+totalMayorPromedio=mayoresPromedio(n,promedio)
+print("Mayores del promedio: ",totalMayorPromedio)
+imprimirDato(n)
+
+
+    
+
+
+
+```
+**funciones57.py**
+```Python
+def getDatoEnteroValidado(leyenda) :
+    while (True) :
+     try:
+        numero=int(input(leyenda))
+        break         
+     except ValueError :
+        print("Ops' el dato que ingreso no es númerico. ")
+    return numero
+
+def getDatoEnteroEntreRango(leyenda,limInf,limSup) :
+    while True :
+      try :
+        estrato=int(input(leyenda))
+        if(estrato<limInf or estrato>limSup) :
+            print("El valor debe estar entre,",limInf," y ",limSup)
+            continue  
+        break
+      except ValueError:
+         print("El dato ingresado debe ser númerico ")
+        
+def getDatoDecimalValidado(leyenda) :
+    while (True) :
+     try:
+        numero=float(input(leyenda))
+        break         
+     except ValueError :
+        print("Ops' el dato que ingreso no es númerico y contener punto decimal. ")
+    return numero
+
+
+```
