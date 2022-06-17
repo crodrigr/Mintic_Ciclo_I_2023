@@ -448,36 +448,51 @@ def getDatoDecimalValidado(leyenda) :
 # 21 Promedio de calificaciones usando matrices.
 ```Python
 
-
-
 #Funciones
 
+def llenadoCalifiaciones():
+    calificaciones=[]
+    estu=int(input("Numbero estudiantes: "))
+    calf=int(input("Numero de califiaciones: "))
+    for i in range(estu) :        
+        print("Califiaciones del estudiante: ",i)
+        calificaciones.append([])
+        for j in range(calf):
+           calificaciones[i].append(int(input("ingrese la calificaciones:")))                 
+    return calificaciones
+
+
 def calcularNotaFinal(m):
-     notasFinales=[]
-     for i in range(len(m)):
+    notasFinales=[]
+    for i in range(len(m)) :
         sumaNotas=0
         for j in range(len(m[i])):
             sumaNotas=sumaNotas+m[i][j]
         notasFinales.append(sumaNotas/len(m[i]))
-     return notasFinales
+    return notasFinales
 
-def mostrarNotasFinales(n):
+def aprobadosReprobados(n) :
     aprobados=0
     reprobados=0
     for i in range(len(n)) :
-        print("Estudiant: ", i,":",n[i] )
+        print("Estudiantes: ",i,":",n[i])
         if(n[i]>=3):
             aprobados=aprobados+1
-        else: 
+        else:
             reprobados=reprobados+1
     print("Aprobados: ",aprobados)
-    print("Reprobados:",reprobados)
+    print("Reprobados: ",reprobados)
+        
 
 
-# Inicia Programa
 
-calificaciones=[[3,4,1,2],[3,4,5,3],[1,3,4,5],[2,4,3,1],[2,2,1,4],[2,3,5,1],[2,7,5,5],[4,3,1,5]]
-p=calcularNotaFinal(calificaciones)
-mostrarNotasFinales(p)
+#Inicio de programa
+calificaciones=llenadoCalifiaciones()
+#calificaciones=[[3,4,5,1,4],[1,3,5,1,2],[4,4,1,5,1],[3,4,1,5,1],[3,4,3,2,3],[2,3,4,2,3],[2,5,2,1,4]]
+listaNotasFinales=calcularNotaFinal(calificaciones)
+aprobadosReprobados(listaNotasFinales)
+
+
+
 
 ```
