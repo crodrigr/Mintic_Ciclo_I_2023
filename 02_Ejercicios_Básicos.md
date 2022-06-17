@@ -445,7 +445,7 @@ def getDatoDecimalValidado(leyenda) :
 
 ```
 
-#21 Promedio de calificaciones usando matrices.
+# 21 Promedio de calificaciones usando matrices.
 ```Python
 
 
