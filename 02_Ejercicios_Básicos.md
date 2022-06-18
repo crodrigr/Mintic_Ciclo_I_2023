@@ -523,3 +523,12 @@ for i in range(numerArticulos) :
 
 print("Total: ",sumaTotal)
 ```
+# 23 Notas de certament
+
+![image](https://user-images.githubusercontent.com/31961588/174418911-d7491680-aa66-4d40-9c0c-1656ab794000.png)
+
+![image](https://user-images.githubusercontent.com/31961588/174418919-d725e180-341d-4979-9b14-f3ac7811a26b.png)
+
+![image](https://user-images.githubusercontent.com/31961588/174418945-cfdabdfa-54fc-461b-86f9-1558c6f8e875.png)
+
+
