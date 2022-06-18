@@ -501,7 +501,7 @@ aprobadosReprobados(listaNotasFinales)
 
 ![image](https://user-images.githubusercontent.com/31961588/174415294-dd483751-5042-4e8b-b2bf-4667330d9723.png)
 
-```Phyton
+```Python
 from funciones57 import * 
 
 #Funciones
