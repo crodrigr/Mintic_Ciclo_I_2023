@@ -496,3 +496,30 @@ aprobadosReprobados(listaNotasFinales)
 
 
 ```
+
+# 22 Supermercado con diccionarios.
+
+![image](https://user-images.githubusercontent.com/31961588/174415294-dd483751-5042-4e8b-b2bf-4667330d9723.png)
+
+```Phyton
+from funciones57 import * 
+
+#Funciones
+articulos={1:"Lapiz",2:"Cuadernos",3:"Borrador",4:"Calculadore",5:"Escuadra"}
+precios={1:2500,2:3800,3:1200,4:35000,5:3700}
+
+
+#Incio de Programa
+
+numerArticulos=getDatoEnteroValidado("Ingrese el número de articulos: ")
+
+sumaTotal=0
+for i in range(numerArticulos) :
+    codigo=getDatoEnteroValidado("Ingrese código (1 a 5) del articulo: ")
+    cantidad=getDatoEnteroValidado("Ingrese la cantidad: ")
+    valorItem=precios[codigo]*cantidad
+    sumaTotal=sumaTotal+valorItem
+    print("Articulo: ",articulos[codigo]," valor unitario: ",precios[codigo]," cantidad: ",cantidad," valor Item:",valorItem)
+
+print("Total: ",sumaTotal)
+```
