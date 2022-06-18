@@ -523,7 +523,7 @@ for i in range(numerArticulos) :
 
 print("Total: ",sumaTotal)
 ```
-# 23 Notas de certament
+# 23 Notas de certamen
 
 ![image](https://user-images.githubusercontent.com/31961588/174418911-d7491680-aa66-4d40-9c0c-1656ab794000.png)
 
