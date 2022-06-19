@@ -531,4 +531,92 @@ print("Total: ",sumaTotal)
 
 ![image](https://user-images.githubusercontent.com/31961588/174418945-cfdabdfa-54fc-461b-86f9-1558c6f8e875.png)
 
+```Python
+from funciones57 import *
+#Variables Globales
 
+listEstudiantes=[]
+
+#Funciones
+
+def loadData():
+    estudiante1={'nombre':"Camilo",'c1':87,'c2':78,'c3':56,'nf':0}
+    estudiante2={'nombre':"Maria",'c1':27,'c2':38,'c3':46,'nf':0}
+    estudiante3={'nombre':"Juan",'c1':72,'c2':63,'c3':64,'nf':0}
+    listEstudiantes.append(estudiante1)
+    listEstudiantes.append(estudiante2)
+    listEstudiantes.append(estudiante3) 
+
+
+def addEstudiante() :
+    estudiante={}
+    estudiante['nombre']=input("Ingrese el nombre: ")
+    estudiante['c1']=getDatoEnteroValidado("Ingrese c1: ")
+    estudiante['c2']=getDatoEnteroValidado("Ingrese c2: ")
+    estudiante['c3']=getDatoEnteroValidado("Ingrese c3: ")
+    estudiante['nf']=0
+    listEstudiantes.append(estudiante)
+
+def imprimir() :
+    for i in range(len(listEstudiantes)) :
+        print("Nombre: ",listEstudiantes[i].get('nombre'),
+              "C1: ",listEstudiantes[i].get('c1'),
+              "C2: ",listEstudiantes[i].get('c2'),
+              "C3: ",listEstudiantes[i].get('c3'),
+              "Nf: ",'{:,.1f}'.format(listEstudiantes[i].get('nf')))
+            
+def calcularPromedioEstudiante() :
+     for i in range(len(listEstudiantes)) :
+         sumaNotas=listEstudiantes[i].get('c1')+listEstudiantes[i].get('c2')+listEstudiantes[i].get('c2')
+         nf=sumaNotas/3
+         listEstudiantes[i]['nf']=nf
+
+def promedioCurso() :
+    sumaNotas=0
+    for i in range(len(listEstudiantes)) :
+         sumaNotas=sumaNotas+listEstudiantes[i].get('nf')
+    pro=sumaNotas/len(listEstudiantes)
+    print("Promedio curso: ",'{:,.1f}'.format(pro))
+         
+def aprobadosReprobados():
+     aprobados=0
+     reprobados=0
+     for i in range(len(listEstudiantes)) :          
+           if(listEstudiantes[i].get('nf')>=60):
+            aprobados+=1
+           else:
+            reprobados+=1
+     print("Aprobados: ",aprobados)
+     print("Reaprobados: ",reprobados)
+
+              
+def menu() :
+    print("_________________MENU____________________")
+    print("1.Crear Estudiante ")
+    print("2.Calcular la nota final de cada estudiante ")
+    print("3.Calcular el promedio del curso")
+    print("4.Cuantos aprobados y reprobados")
+    print("5.Imprimir listado estudiantes")
+    print("6.Salir")
+    op=getDatoEnteroValidado("Ingresar opción: ")
+    return op
+
+ 
+#Incio programa
+
+op=1
+loadData()
+while op>=1 and op<=5 :
+    op=menu()
+    if(op==1):
+        addEstudiante()
+    if(op==2):
+        calcularPromedioEstudiante() 
+        print("Calculando promedios de todos los estudiantes")
+    if(op==3):
+        promedioCurso()
+    if(op==4):
+        aprobadosReprobados()
+    if(op==5):
+         imprimir()
+```
