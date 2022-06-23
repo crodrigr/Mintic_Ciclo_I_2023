@@ -596,64 +596,82 @@ print("Total: ",sumaTotal)
 ![image](https://user-images.githubusercontent.com/31961588/174418945-cfdabdfa-54fc-461b-86f9-1558c6f8e875.png)
 
 ```Python
-from funciones57 import *
-#Variables Globales
+from funciones57 import * 
 
+#Variables Globales
 listEstudiantes=[]
 
 #Funciones
 
-def loadData():
-    estudiante1={'nombre':"Camilo",'c1':87,'c2':78,'c3':56,'nf':0}
-    estudiante2={'nombre':"Maria",'c1':27,'c2':38,'c3':46,'nf':0}
-    estudiante3={'nombre':"Juan",'c1':72,'c2':63,'c3':64,'nf':0}
-    listEstudiantes.append(estudiante1)
-    listEstudiantes.append(estudiante2)
-    listEstudiantes.append(estudiante3) 
+def loadData() :
+    estu1={'id':'0001','nombre':"Camilo",'c1':45,'c2':98,'c3':89,'nf':0}
+    estu2={'id':'0002','nombre':"Juan",'c1':23,'c2':38,'c3':56,'nf':0}
+    estu3={'id':'0003','nombre':"Maria",'c1':56,'c2':25,'c3':43,'nf':0}
+    estu4={'id':'0004','nombre':"Pedro",'c1':96,'c2':98,'c3':42,'nf':0}
+    estu5={'id':'0005','nombre':"Jose",'c1':10,'c2':60,'c3':99,'nf':0}
+    listEstudiantes.append(estu1)
+    listEstudiantes.append(estu2)
+    listEstudiantes.append(estu3)
+    listEstudiantes.append(estu4)
+    listEstudiantes.append(estu5)
 
-
-def addEstudiante() :
+def addEstudiante():
     estudiante={}
-    estudiante['nombre']=input("Ingrese el nombre: ")
+    estudiante['id']=input("Ingrese el id")
+    estudiante['nombre']=input("Ingrese nombre: ")
     estudiante['c1']=getDatoEnteroValidado("Ingrese c1: ")
     estudiante['c2']=getDatoEnteroValidado("Ingrese c2: ")
     estudiante['c3']=getDatoEnteroValidado("Ingrese c3: ")
     estudiante['nf']=0
     listEstudiantes.append(estudiante)
 
+def calcularNotafinaEstudiante():    
+    for i in range(len(listEstudiantes)) :     
+      suma=listEstudiantes[i].get('c1')+listEstudiantes[i].get('c2')+listEstudiantes[i].get('c3')
+      listEstudiantes[i]['nf']=suma/3
+
+def promdioCurso():
+    suma=0
+    for i in range(len(listEstudiantes)) :     
+      suma+=listEstudiantes[i].get('nf')     
+    promedio=suma/len(listEstudiantes)
+    print("Promedio del curso: ",'{:,.1f}'.format(promedio))
+
+def aprobadosReprobados():
+    aprobados=0
+    reprobados=0
+    for i in range(len(listEstudiantes)) :   
+        if(listEstudiantes[i].get('nf')>=55):
+            aprobados+=1
+        else:
+            reprobados+=1
+    print("Aprobados: ",aprobados) 
+    print("Reprobados: ",reprobados)
+
+def buscar(idBuscar) :
+    for i in range(len(listEstudiantes)) :
+      if(listEstudiantes[i].get('id')==idBuscar):
+        return i
+    return -1
+
+def imprimirPorPos(pos) :   
+        print("Id: ",listEstudiantes[pos].get('id'),
+              "Nombre: ",listEstudiantes[pos].get('nombre'),
+              "C1: ",listEstudiantes[pos].get('c1'),
+              "C2: ",listEstudiantes[pos].get('c2'),
+              "C3: ",listEstudiantes[pos].get('c3'),
+              "Nf: ",'{:,.1f}'.format(listEstudiantes[pos].get('nf')))
+
+
 def imprimir() :
     for i in range(len(listEstudiantes)) :
-        print("Nombre: ",listEstudiantes[i].get('nombre'),
+        print("Id: ",listEstudiantes[i].get('id'),
+              "Nombre: ",listEstudiantes[i].get('nombre'),
               "C1: ",listEstudiantes[i].get('c1'),
               "C2: ",listEstudiantes[i].get('c2'),
               "C3: ",listEstudiantes[i].get('c3'),
               "Nf: ",'{:,.1f}'.format(listEstudiantes[i].get('nf')))
-            
-def calcularPromedioEstudiante() :
-     for i in range(len(listEstudiantes)) :
-         sumaNotas=listEstudiantes[i].get('c1')+listEstudiantes[i].get('c2')+listEstudiantes[i].get('c2')
-         nf=sumaNotas/3
-         listEstudiantes[i]['nf']=nf
 
-def promedioCurso() :
-    sumaNotas=0
-    for i in range(len(listEstudiantes)) :
-         sumaNotas=sumaNotas+listEstudiantes[i].get('nf')
-    pro=sumaNotas/len(listEstudiantes)
-    print("Promedio curso: ",'{:,.1f}'.format(pro))
-         
-def aprobadosReprobados():
-     aprobados=0
-     reprobados=0
-     for i in range(len(listEstudiantes)) :          
-           if(listEstudiantes[i].get('nf')>=60):
-            aprobados+=1
-           else:
-            reprobados+=1
-     print("Aprobados: ",aprobados)
-     print("Reaprobados: ",reprobados)
-
-              
 def menu() :
     print("_________________MENU____________________")
     print("1.Crear Estudiante ")
@@ -661,26 +679,36 @@ def menu() :
     print("3.Calcular el promedio del curso")
     print("4.Cuantos aprobados y reprobados")
     print("5.Imprimir listado estudiantes")
-    print("6.Salir")
+    print("6.Buscar ")
+    print("7.Salir")
     op=getDatoEnteroValidado("Ingresar opción: ")
     return op
 
- 
-#Incio programa
-
-op=1
+#Inicia Programa
 loadData()
-while op>=1 and op<=5 :
-    op=menu()
-    if(op==1):
-        addEstudiante()
-    if(op==2):
-        calcularPromedioEstudiante() 
-        print("Calculando promedios de todos los estudiantes")
-    if(op==3):
-        promedioCurso()
-    if(op==4):
-        aprobadosReprobados()
-    if(op==5):
-         imprimir()
+op=1
+while (op>=1 and op<=6) :
+        op=menu()
+        if(op==1):
+          addEstudiante()
+        if(op==2):
+          calcularNotafinaEstudiante()
+        if(op==3):
+          promdioCurso()
+        if(op==4):
+          aprobadosReprobados()
+        if(op==5):
+          imprimir()
+        if(op==6):
+          id=input("Ingrese el id: ")
+          pos=buscar(id)
+          if(pos!=-1):
+            print("Datos del estudiante: ")
+            imprimirPorPos(pos)
+          else :
+            print("No existe ningún estudiante con ese Id !")
+
+
+
+
 ```
