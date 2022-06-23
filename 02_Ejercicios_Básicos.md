@@ -3,6 +3,70 @@
 
 ## Programas simples
 
+# 0. Libreria de funciones
+
+```Python
+def getDatoEnteroValidado(leyenda) :
+    while (True) :
+     try:
+        numero=int(input(leyenda))
+        break         
+     except ValueError :
+        print("Ops' el dato que ingreso no es númerico. ")
+    return numero
+
+def getDatoEnteroEntreRango(leyenda,limInf,limSup) :
+    while True :
+      try :
+        estrato=int(input(leyenda))
+        if(estrato<limInf or estrato>limSup) :
+            print("El valor debe estar entre,",limInf," y ",limSup)
+            continue  
+        break
+      except ValueError:
+         print("El dato ingresado debe ser númerico ")
+        
+def getDatoDecimalValidado(leyenda) :
+    while (True) :
+     try:
+        numero=float(input(leyenda))
+        break         
+     except ValueError :
+        print("Ops' el dato que ingreso no es númerico y contener punto decimal. ")
+    return numero
+
+
+def imprimirMatriz(matriz):
+    for i in range(len(matriz)) :
+        for j in range(len(matriz[i])) :
+          print(matriz[i][j])
+        print("\n")
+
+def ordenmiento(lista,tipo) :
+    if(tipo=='desc') :
+        for i in range(len(lista)) :
+         for j in range(i+1,len(lista)) :         
+                if (lista[i]<lista[j]) :
+                    temp=lista[i]
+                    lista[i]=lista[j]
+                    lista[j]=temp
+            
+    elif(tipo=='asc') :
+      for i in range(len(lista)) :
+        for j in range(i+1,len(lista)) :
+              if (lista[i]>lista[j]) :
+                 temp=lista[i]
+                 lista[i]=lista[j]
+                 lista[j]=temp             
+    return lista
+
+def buscar(lista,valor) :    
+    for i in range(len(lista)) :
+       if(lista[i]==valor) :
+          return i
+    return -1
+```
+
 # 1. Saludo
 
 ![image](https://user-images.githubusercontent.com/31961588/163828082-08d94056-7373-4cc9-bf23-a374f3e8e01d.png)
