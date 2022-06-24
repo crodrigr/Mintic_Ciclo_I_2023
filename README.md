@@ -1,5 +1,7 @@
 # Mintic 2023 Ciclo I
 
+crodrigr@gmail.com
+
 ## Instalar Herramientas de Trabajo
 
 ### 1. Python [Download](https://www.python.org/downloads/).
