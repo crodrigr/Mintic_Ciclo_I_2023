@@ -720,3 +720,9 @@ while (op>=1 and op<=6) :
 ![image](https://user-images.githubusercontent.com/31961588/175436166-35dba909-5837-408f-bef7-9d73f90d64f8.png)
 
 
+# 25 Listas ordenadas
+
+![image](https://user-images.githubusercontent.com/31961588/175436536-f6473122-2d23-44ba-81c6-2295c9ea4e74.png)
+
+![image](https://user-images.githubusercontent.com/31961588/175436568-045a9b7a-df85-4818-9a42-1f60bbbbc7e2.png)
+
