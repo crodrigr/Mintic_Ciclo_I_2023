@@ -712,3 +712,11 @@ while (op>=1 and op<=6) :
 
 
 ```
+
+# 24 Torneo de tennis
+
+![image](https://user-images.githubusercontent.com/31961588/175436135-b2d1f70e-5611-4978-a379-6348e1e2ffc2.png)
+
+![image](https://user-images.githubusercontent.com/31961588/175436166-35dba909-5837-408f-bef7-9d73f90d64f8.png)
+
+
