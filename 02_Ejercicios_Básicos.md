@@ -5,6 +5,8 @@
 
 # 0. Libreria de funciones
 
+**funciones57.py**
+
 ```Python
 def getDatoEnteroValidado(leyenda) :
     while (True) :
