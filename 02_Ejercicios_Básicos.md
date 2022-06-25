@@ -728,3 +728,48 @@ while (op>=1 and op<=6) :
 
 ![image](https://user-images.githubusercontent.com/31961588/175436568-045a9b7a-df85-4818-9a42-1f60bbbbc7e2.png)
 
+```Python
+from funciones57 import *
+
+a=[13,12,11,1,9,7,4,2,3,5,14]  
+b=[2,1,6,7,9,16,10,14,3,4,13]
+c=[]
+
+print("Lista a")
+print(a)
+print("Lista b")
+print(b)
+
+a=ordenmiento(a,'asc')
+b=ordenmiento(b,'asc')
+
+#merge
+for i in range(len(a)) :
+    if(a[i]==b[i]) :
+       c.append(a[i])   
+    else :
+        c.append(b[i])
+        c.append(a[i])
+
+#Ordenar lista
+c=ordenmiento(c,'asc')
+
+#Elminar repetidos
+c1=[]
+for i in range(len(c)) :
+   sw=0
+   for j in range(i+1,len(c)) :
+       if(c[i]==c[j]) :
+         sw=1
+   if(sw==0) :
+    c1.append(c[i])
+
+#Resultado final  
+print("Lista a")
+print(a)
+print("Lista b")
+print(b)
+print("Lista c")
+print(c1)
+```
+
