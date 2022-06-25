@@ -721,6 +721,44 @@ while (op>=1 and op<=6) :
 
 ![image](https://user-images.githubusercontent.com/31961588/175436166-35dba909-5837-408f-bef7-9d73f90d64f8.png)
 
+```Python
+import random
+#Declaraciones
+
+tenistas=['Nadal','Melzer','Murray','Soderling','Djokovic','Berdych','Federer','Ferrer','Juan','Pedro','David','Eli','Willy','Jorge','Carlos','Daniel']
+
+#Funciones
+def mostrarTenista(n) :
+    for i in range(len(n)) :
+        print("Jugador: ",i+1,": ",n[i])
+
+
+def rondas(n) :
+    nuevaRonda=[]
+    for i in range(0,len(n),2) :
+        print("a. ",n[i],"- b.",n[i+1]," : ")
+        g=random.randint(1,2)
+        if(g==1) :
+           print("a")
+           nuevaRonda.append(n[i])
+        else :
+           print("b")
+           nuevaRonda.append(n[i+1])
+    return nuevaRonda
+
+
+# Inicio del programa
+
+mostrarTenista(tenistas)
+while len(tenistas)>1 :
+    tenistas= rondas(tenistas)
+    print(" ")
+    mostrarTenista(tenistas)
+    print(" ")
+
+
+```
+
 
 # 25 Listas ordenadas
 
