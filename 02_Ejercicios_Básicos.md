@@ -811,3 +811,38 @@ print("Lista c")
 print(c1)
 ```
 
+# 26 Busqueda binaria recursiva
+
+```Python
+from funciones57 import*
+
+listaNumeros=[4,5,8,9,10,40,30,50,49]
+
+#Funciones
+def busqueda_binaria(lista,elemento,izq,der):
+    if izq>der:
+        return -1
+    med=(izq+der)//2
+    if lista[med]==elemento :
+        return med
+    elif lista[med]>elemento:
+        return busqueda_binaria(lista,elemento,izq,med-1)
+    else :
+        return busqueda_binaria(lista,elemento,med+1,der)
+
+
+#Inicio de Programa
+print(listaNumeros)
+listaNumeros=ordenmiento(listaNumeros,'asc')
+print(listaNumeros)
+izq=0
+der=len(listaNumeros)-1
+numero=int(input("Ingrese número a buscar: "))
+pos=busqueda_binaria(listaNumeros,numero,izq,der)
+if(pos!=-1) :
+ print("Elemento encontrador en :", pos)
+else :
+ print("Elemnto no encontrado")
+
+
+```
