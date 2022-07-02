@@ -863,28 +863,36 @@ def guardarArchivo() :
     archivo=open("estudiantes.txt","w")
     datos=""
     for i in range(len(listEstudiantes)) :
-        datos+=concat("\n",listEstudiantes[i].get('id'))
-        datos+=concat("\n",listEstudiantes[i].get('nombre'))
-        datos+=concat("\n",str(listEstudiantes[i].get('c1')))
-        datos+=concat("\n",str(listEstudiantes[i].get('c2')))
-        datos+=concat("\n",str(listEstudiantes[i].get('c3')))
-        datos+=concat("\n",'{:,.1f}'.format(listEstudiantes[i].get('nf'),";"))
-        datos+=";"
+        datos+=listEstudiantes[i].get('id')+","
+        datos+=listEstudiantes[i].get('nombre')+","
+        datos+=str(listEstudiantes[i].get('c1'))+","
+        datos+=str(listEstudiantes[i].get('c2'))+","
+        datos+=str(listEstudiantes[i].get('c3'))+","
+        datos+=str(listEstudiantes[i].get('nf'))
+        datos+="\n"
 
     archivo.write(datos) 
     print("Guardado...")
 
-def loadData() :
-    estu1={'id':'0005','nombre':"Camilo",'c1':45,'c2':98,'c3':89,'nf':0}
-    estu2={'id':'0004','nombre':"Juan",'c1':23,'c2':38,'c3':56,'nf':0}
-    estu3={'id':'0001','nombre':"Maria",'c1':56,'c2':25,'c3':43,'nf':0}
-    estu4={'id':'0002','nombre':"Pedro",'c1':96,'c2':98,'c3':42,'nf':0}
-    estu5={'id':'0003','nombre':"Jose",'c1':10,'c2':60,'c3':99,'nf':0}
-    listEstudiantes.append(estu1)
-    listEstudiantes.append(estu2)
-    listEstudiantes.append(estu3)
-    listEstudiantes.append(estu4)
-    listEstudiantes.append(estu5)
+def loadData() :   
+    archivo=open("estudiantes.txt","r")   
+    linea=archivo.readline()
+    while linea :
+          estu={}
+          datos=linea.split(',')         
+          estu['id']=datos[0]
+          estu['nombre']=datos[1]
+          estu['c1']=int(datos[2])
+          estu['c2']=int(datos[3])
+          estu['c3']=int(datos[4])
+          estu['nf']=float(datos[5])
+          listEstudiantes.append(estu)
+          linea = archivo.readline()
+
+    archivo.close()
+
+    
+
     
 
 
@@ -946,7 +954,7 @@ def imprimir() :
               "C1: ",listEstudiantes[i].get('c1'),
               "C2: ",listEstudiantes[i].get('c2'),
               "C3: ",listEstudiantes[i].get('c3'),
-              "Nf: ",'{:,.1f}'.format(listEstudiantes[i].get('nf')))
+              "Nf: ",listEstudiantes[i].get('nf'))
 
 
 def particion(lista) :
@@ -956,6 +964,8 @@ def particion(lista) :
     for i in range(1,len(lista),1) :
        if lista[i].get('id')<pivote:
           menores.append(lista[i])
+          print("menores")
+          print(menores)
        else :
           mayores.append(lista[i])
     return menores,pivote,mayores
@@ -1012,6 +1022,10 @@ while (op>=1 and op<=8) :
           print(listEstudiantes)
         if(op==8) :
           guardarArchivo()
+
+
+
+
 
 
 
