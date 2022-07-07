@@ -852,12 +852,27 @@ else :
 from operator import concat
 from funciones57 import *
 from io import open
+import json
 
 #Variables Globales
 listEstudiantes=[]
 
 
 #Funciones
+
+def guardarArchivoJson() :
+  with open("estudaintes.json","w") as archivo :
+     json.dump(listEstudiantes,archivo)    
+  archivo.close()
+
+def loadDataJson():
+  with open("estudaintes.json","r") as archivo:   
+   datos=json.load(archivo)    
+  archivo.close()
+  return datos
+  
+
+  
 
 def guardarArchivo() :
     archivo=open("estudiantes.txt","w")
@@ -890,8 +905,6 @@ def loadData() :
           linea = archivo.readline()
 
     archivo.close()
-
-    
 
     
 
@@ -948,7 +961,8 @@ def imprimirPorPos(pos) :
 
 
 def imprimir() :
-    for i in range(len(listEstudiantes)) :
+    print("Imprimir estudiantes")
+    for i in range(len(listEstudiantes)) :       
         print("Id: ",listEstudiantes[i].get('id'),
               "Nombre: ",listEstudiantes[i].get('nombre'),
               "C1: ",listEstudiantes[i].get('c1'),
@@ -994,7 +1008,9 @@ def menu() :
     return op
 
 #Inicia Programa
-loadData()
+#loadData()
+
+listEstudiantes=loadDataJson()
 op=1
 while (op>=1 and op<=8) :
         op=menu()
@@ -1007,6 +1023,7 @@ while (op>=1 and op<=8) :
         if(op==4):
           aprobadosReprobados()
         if(op==5):
+          print("op5")
           imprimir()
         if(op==6):
           id=input("Ingrese el id: ")
@@ -1021,13 +1038,8 @@ while (op>=1 and op<=8) :
           listEstudiantes=quicksort(listEstudiantes)
           print(listEstudiantes)
         if(op==8) :
-          guardarArchivo()
-
-
-
-
-
-
+          #guardarArchivo()
+          guardarArchivoJson()
 
 
 ```
