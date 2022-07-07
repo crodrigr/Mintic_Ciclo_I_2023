@@ -846,7 +846,7 @@ else :
 
 
 ```
-# 27 Certanmenes con archivos
+# 27 Certamenes con archivos
 
 ```Python
 from operator import concat
